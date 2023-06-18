@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:gravity="center"
-    android:background="@drawable/quiz1"
+    android:background="@drawable/ic_background_quiz1"
     android:orientation="vertical">
 
     <TextView
@@ -62,14 +62,14 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 tools:ignore="ExtraText">
 
-                <TextView
+            <TextView
                     android:layout_height="0.1dp"
                     android:layout_width="0.1dp"
                     android:labelFor="@+id/name"
                     android:text="Name"/>
 
 
-                <androidx.appcompat.widget.AppCompatEditText
+            <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -81,7 +81,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/btn_start"
+                android:id="@+id/btnStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

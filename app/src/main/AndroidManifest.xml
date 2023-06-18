@@ -13,10 +13,16 @@
         android:theme="@style/Theme.QuizApp"
         tools:targetApi="31">
         <activity
+            android:name=".QuestionsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme"
+            android:theme="@style/Base.Theme.QuizApp"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
