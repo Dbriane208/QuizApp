@@ -1,10 +1,10 @@
 package daniel.brian.quizapp
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
@@ -13,9 +13,9 @@ import androidx.core.content.ContextCompat
 
 class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var progressBar : ProgressBar
-    private lateinit var tv_progress : TextView
-    private lateinit var tv_question : TextView
-    private lateinit var iv_image : ImageView
+    private lateinit var tvProgress : TextView
+    private lateinit var tvQuestion : TextView
+    private lateinit var ivImage : ImageView
     private lateinit var optionOne : TextView
     private lateinit var optionTwo : TextView
     private lateinit var optionThree : TextView
@@ -30,44 +30,46 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
 
+        mQuestionList = Constants.getQuestions()
+        setQuestion()
+
+        // Finding elements buy Id
+        progressBar = findViewById(R.id.progressBar)
+        tvProgress = findViewById(R.id.tv_progress)
+        tvQuestion = findViewById(R.id.tv_question)
+        ivImage = findViewById(R.id.iv_image)
+        optionOne = findViewById(R.id.optionOne)
+        optionTwo = findViewById(R.id.optionTwo)
+        optionThree = findViewById(R.id.optionThree)
+        optionFour = findViewById(R.id.optionFour)
+
+
         // To access the buttons
         optionOne.setOnClickListener(this)
         optionTwo.setOnClickListener(this)
         optionThree.setOnClickListener(this)
         optionFour.setOnClickListener(this)
 
-        // Finding elements buy Id
-        progressBar = findViewById(R.id.progressBar)
-        tv_progress = findViewById(R.id.tv_progress)
-        tv_question = findViewById(R.id.tv_question)
-        iv_image = findViewById(R.id.iv_image)
-        optionOne = findViewById(R.id.optionOne)
-        optionTwo = findViewById(R.id.optionTwo)
-        optionThree = findViewById(R.id.optionThree)
-        optionFour = findViewById(R.id.optionFour)
-
-        mQuestionList = Constants.getQuestions()
-        setQuestion()
-
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setQuestion () {
 
         mCurrentPosition = 1
         val question = mQuestionList!![mCurrentPosition  - 1]
 
-        progressBar.progress = mCurrentPosition
-        tv_progress.text = "$mCurrentPosition " + "/" + progressBar.max
+        // This will be set the default after every question
+        defaultOptionView()
 
-        tv_question.text = question!!.Question
-        iv_image.setImageResource(question.image)
+        progressBar.progress = mCurrentPosition
+        tvProgress.text = "$mCurrentPosition " + "/" + progressBar.max
+
+        tvQuestion.text = question!!.Question
+        ivImage.setImageResource(question.image)
         optionOne.text = question.optionOne
         optionTwo.text = question.optionTwo
         optionThree.text = question.optionThree
         optionFour.text = question.optionFour
-
-        // This will be set the default after every question
-        defaultOptionView()
 
     }
 
@@ -76,9 +78,9 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         val options = ArrayList<TextView>()
 
         options.add(0,optionOne)
-        options.add(1,optionOne)
-        options.add(2,optionOne)
-        options.add(3,optionOne)
+        options.add(1,optionTwo)
+        options.add(2,optionThree)
+        options.add(3,optionFour)
 
         for(option in options){
 
@@ -94,10 +96,25 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
+         when(v?.id) {
+             R.id.optionOne -> {
+                 selectedOptionView(optionOne, 1)
+             }
+             R.id.optionTwo -> {
+                 selectedOptionView(optionTwo, 2)
+             }
+             R.id.optionThree -> {
+                 selectedOptionView(optionThree, 3)
+             }
+             R.id.optionFour -> {
+                 selectedOptionView(optionFour, 4)
+             }
+        }
     }
 
     private fun selectedOptionView (tv: TextView, selectedOptionNum : Int){
 
+        defaultOptionView()
         mSelectedOptionPosition = selectedOptionNum
 
         tv.setTextColor(Color.parseColor("#363A43"))
@@ -105,6 +122,6 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tv.background = ContextCompat.getDrawable(this,
             R.drawable.selcected_option_border_bg)
 
-        defaultOptionView()
+
     }
 }
