@@ -31,7 +31,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_questions)
 
         mQuestionList = Constants.getQuestions()
-        setQuestion()
+
 
         // Finding elements buy Id
         progressBar = findViewById(R.id.progressBar)
@@ -50,6 +50,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         optionThree.setOnClickListener(this)
         optionFour.setOnClickListener(this)
 
+        setQuestion()
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -57,9 +59,6 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         mCurrentPosition = 1
         val question = mQuestionList!![mCurrentPosition  - 1]
-
-        // This will be set the default after every question
-        defaultOptionView()
 
         progressBar.progress = mCurrentPosition
         tvProgress.text = "$mCurrentPosition " + "/" + progressBar.max
@@ -71,16 +70,19 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         optionThree.text = question.optionThree
         optionFour.text = question.optionFour
 
+        // This will be set the default after every question
+        defaultOptionView()
+
     }
 
     private fun defaultOptionView () {
 
         val options = ArrayList<TextView>()
 
-        options.add(0,optionOne)
-        options.add(1,optionTwo)
-        options.add(2,optionThree)
-        options.add(3,optionFour)
+        options.add(0, this.optionOne)
+        options.add(1, this.optionTwo)
+        options.add(2, this.optionThree)
+        options.add(3, this.optionFour)
 
         for(option in options){
 
