@@ -6,9 +6,11 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 
 class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
@@ -20,6 +22,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var optionTwo : TextView
     private lateinit var optionThree : TextView
     private lateinit var optionFour : TextView
+    private lateinit var submitButton : Button
 
 
     private var mCurrentPosition : Int = 1
@@ -32,8 +35,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         mQuestionList = Constants.getQuestions()
 
-
-        // Finding elements buy Id
+        // Finding elements by Id
         progressBar = findViewById(R.id.progressBar)
         tvProgress = findViewById(R.id.tv_progress)
         tvQuestion = findViewById(R.id.tv_question)
@@ -42,6 +44,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         optionTwo = findViewById(R.id.optionTwo)
         optionThree = findViewById(R.id.optionThree)
         optionFour = findViewById(R.id.optionFour)
+        submitButton = findViewById(R.id.submitBtn)
 
 
         // To access the buttons
@@ -49,6 +52,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         optionTwo.setOnClickListener(this)
         optionThree.setOnClickListener(this)
         optionFour.setOnClickListener(this)
+        submitButton.setOnClickListener(this)
 
         setQuestion()
 
@@ -57,8 +61,13 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     private fun setQuestion () {
 
-        mCurrentPosition = 1
         val question = mQuestionList!![mCurrentPosition  - 1]
+
+        if(mSelectedOptionPosition == mQuestionList!!.size){
+            submitButton.text = "FINISH"
+        }else{
+            submitButton.text = "SUBMIT"
+        }
 
         progressBar.progress = mCurrentPosition
         tvProgress.text = "$mCurrentPosition " + "/" + progressBar.max
@@ -87,7 +96,6 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         for(option in options){
 
             // This code set the default background
-
             option.setTextColor(Color.parseColor("#7A8089"))
             option.typeface = Typeface.DEFAULT
             option.background = ContextCompat.getDrawable(this,
@@ -111,6 +119,53 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
              R.id.optionFour -> {
                  selectedOptionView(optionFour, 4)
              }
+             R.id.submitBtn -> {
+
+                 if(mSelectedOptionPosition == 0){
+                     mCurrentPosition ++
+
+                     when{
+                         mCurrentPosition <= mQuestionList!!.size -> {
+                             setQuestion()
+                         }else -> {
+                             Toast.makeText(this,"You have Successfully completed!!",Toast.LENGTH_SHORT).show()
+                         }
+                     }
+                 }else{
+                     val question = mQuestionList?.get(mCurrentPosition -1)
+
+                     if(question!!.correctAnswer != mSelectedOptionPosition){
+                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                     }
+                         answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+
+                     if(mCurrentPosition == mQuestionList!!.size){
+                         submitButton.text = "FINISH"
+
+                     }else{
+                         submitButton.text = "GO TO THE NEXT QUESTION"
+                     }
+                         mSelectedOptionPosition = 0
+                 }
+             }
+        }
+    }
+
+    private  fun answerView(answer : Int, drawableView : Int){
+
+        when(answer){
+            1 -> {
+              optionOne.background = ContextCompat.getDrawable(this,drawableView)
+            }
+            2 -> {
+                optionTwo.background = ContextCompat.getDrawable(this,drawableView)
+            }
+            3 -> {
+                optionThree.background = ContextCompat.getDrawable(this,drawableView)
+            }
+            4 -> {
+                optionFour.background = ContextCompat.getDrawable(this,drawableView)
+            }
         }
     }
 

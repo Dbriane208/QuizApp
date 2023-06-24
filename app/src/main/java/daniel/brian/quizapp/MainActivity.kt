@@ -19,17 +19,17 @@ import androidx.appcompat.app.AppCompatActivity
          name = findViewById(R.id.name)
          btnStart = findViewById(R.id.btnStart)
 
-       btnStart.setOnClickListener{
+         btnStart.setOnClickListener{
 
-           if(name.text.toString().isEmpty()){
+             if(name.text.toString().isEmpty()){
                Toast.makeText(this,"Please Enter your name",Toast.LENGTH_SHORT).show()
-           }else{
+             }else{
 
                val intent = Intent(this, QuestionsActivity::class.java)
                startActivity(intent)
                finish()
 
-           }
+             }
 
         }
     }
