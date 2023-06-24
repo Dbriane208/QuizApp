@@ -5,6 +5,9 @@ import java.util.ArrayList
 
 object Constants {
 
+    const val CORRECT_ANSWERS : String = "Correct_Answers"
+    const val TOTAL_QUESTIONS : String = "Total_Questions"
+    const val USER_NAME : String = "User_name"
     fun getQuestions(): ArrayList<Questions>{
         val questionsList = ArrayList<Questions>()
 

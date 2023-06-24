@@ -1,6 +1,7 @@
 package daniel.brian.quizapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -28,11 +29,14 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var mCurrentPosition : Int = 1
     private var mQuestionList : ArrayList<Questions>? = null
     private var mSelectedOptionPosition : Int = 0
+    private var mCorrectAnswers : Int = 0
+    private var mUserName : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
 
+        mUserName = intent.getStringExtra(Constants.USER_NAME)
         mQuestionList = Constants.getQuestions()
 
         // Finding elements by Id
@@ -45,7 +49,6 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         optionThree = findViewById(R.id.optionThree)
         optionFour = findViewById(R.id.optionFour)
         submitButton = findViewById(R.id.submitBtn)
-
 
         // To access the buttons
         optionOne.setOnClickListener(this)
@@ -72,7 +75,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         progressBar.progress = mCurrentPosition
         tvProgress.text = "$mCurrentPosition " + "/" + progressBar.max
 
-        tvQuestion.text = question!!.Question
+        tvQuestion.text = question .Question
         ivImage.setImageResource(question.image)
         optionOne.text = question.optionOne
         optionTwo.text = question.optionTwo
@@ -128,7 +131,11 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                          mCurrentPosition <= mQuestionList!!.size -> {
                              setQuestion()
                          }else -> {
-                             Toast.makeText(this,"You have Successfully completed!!",Toast.LENGTH_SHORT).show()
+                             val intent = Intent(this,ResultActivity::class.java)
+                             intent .putExtra(Constants.USER_NAME, mUserName)
+                             intent .putExtra(Constants.TOTAL_QUESTIONS, mQuestionList!!.size)
+                             intent .putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                             startActivity(intent)
                          }
                      }
                  }else{
@@ -136,6 +143,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
                      if(question!!.correctAnswer != mSelectedOptionPosition){
                          answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                     }else{
+                         mCorrectAnswers++
                      }
                          answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
 
