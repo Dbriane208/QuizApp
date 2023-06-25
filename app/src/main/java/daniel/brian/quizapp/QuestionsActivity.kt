@@ -66,7 +66,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         val question = mQuestionList!![mCurrentPosition  - 1]
 
-        if(mSelectedOptionPosition == mQuestionList!!.size){
+        if(mCurrentPosition == mQuestionList!!.size){
             submitButton.text = "FINISH"
         }else{
             submitButton.text = "SUBMIT"
@@ -131,9 +131,9 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                          mCurrentPosition <= mQuestionList!!.size -> {
                              setQuestion()
                          }else -> {
-                             val intent = Intent(this,ResultActivity::class.java)
-                             intent .putExtra(Constants.USER_NAME, mUserName)
-                             intent .putExtra(Constants.TOTAL_QUESTIONS, mQuestionList!!.size)
+                             val intent = Intent(this, ResultActivity::class.java)
+                             intent.putExtra(Constants.USER_NAME, mUserName)
+                             intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionList!!.size)
                              intent .putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
                              startActivity(intent)
                          }

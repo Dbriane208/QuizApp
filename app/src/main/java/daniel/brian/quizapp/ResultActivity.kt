@@ -16,6 +16,10 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
+        userName = findViewById(R.id.userName)
+        total_Score = findViewById(R.id.total_Score)
+        btnFinish = findViewById(R.id.btnFinish)
+
         val username = intent.getStringExtra(Constants.USER_NAME)
         userName.text = username
 
@@ -25,7 +29,7 @@ class ResultActivity : AppCompatActivity() {
         "Your Score is $correctAnswers out of $totalQuestions".also { total_Score.text = it }
 
         btnFinish.setOnClickListener{
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this,  MainActivity::class.java))
             finish()
         }
 
