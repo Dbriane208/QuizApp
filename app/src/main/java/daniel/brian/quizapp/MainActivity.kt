@@ -30,7 +30,7 @@ import androidx.appcompat.app.AppCompatActivity
              if(name.text.toString().isEmpty()){
                Toast.makeText(this,"Please Enter your name",Toast.LENGTH_SHORT).show()
              }else{
-               val intent = Intent(this, QuestionsActivity::class.java)
+               val intent = Intent(this, SecondActivity::class.java)
                intent.putExtra(Constants.USER_NAME, name.text.toString())
                startActivity(intent)
                finish()
