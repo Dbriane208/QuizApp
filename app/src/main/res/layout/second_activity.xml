@@ -1,35 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1564C0"
+    android:background="@drawable/ic_background_quiz1"
     android:orientation="vertical">
 
     <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <ImageView
-    android:layout_width="0dp"
-    android:layout_height="100dp"
-    android:layout_weight="1"
-    android:layout_gravity="center"
-    android:src="@drawable/kiddo_remove_bg"/>
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="10dp">
 
     <TextView
+    android:id="@+id/reg_name"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_margin="10dp"
-    android:text="Let's Goooo.."
-    android:textSize="30sp"
+    android:layout_marginVertical="17dp"
+    android:text="Hello Daniel 👋"
+    android:layout_weight="1"
+    android:textSize="24sp"
     android:textStyle="bold|italic"
+    android:textColor="@color/white"
+    tools:ignore="HardcodedText,InefficientWeight" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+    android:id="@+id/change_profile"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:scaleType="centerCrop"
+    android:layout_marginVertical="9dp"
+    android:src="@drawable/avatar"
+    app:shapeAppearanceOverlay="@style/circular" />
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="Let's Play"
+    android:textSize="30sp"
+    android:textStyle="bold"
+    android:textColor="#404040"
+    tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="horizontal"
+    >
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Select Logo Category"
+    android:textSize="20sp"
     android:textColor="@color/white"
     tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/layout_card_background"
+    android:orientation="horizontal">
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginStart="10dp"
+    android:background="@drawable/flag_rep_bg"
+    android:src="@drawable/flag_image_rep_remove_bg"
+    />
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="17dp"
+    android:layout_marginStart="56dp"
+    android:text="Flags"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <Button
+    android:id="@+id/btn_play1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Play"
+    android:layout_marginStart="100dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/button_bg"
+    android:textColor="@color/white"
+    tools:ignore="HardcodedText" />
+
+
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/layout_card_background"
+    android:orientation="horizontal">
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginStart="10dp"
+    android:background="@drawable/flag_rep_bg"
+    android:src="@drawable/tesla_logo_remove_bg"
+    />
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="17dp"
+    android:layout_marginStart="50dp"
+    android:text="Logos"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <Button
+    android:id="@+id/btn_play2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Play"
+    android:layout_marginStart="100dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/button_bg"
+    android:textColor="@color/white"
+    tools:ignore="HardcodedText" />
+
+
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/layout_card_background"
+    android:orientation="horizontal">
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginStart="10dp"
+    android:background="@drawable/flag_rep_bg"
+    android:src="@drawable/nike_logo_remove_bg"
+    />
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="17dp"
+    android:layout_marginStart="41dp"
+    android:text="Brands"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+     <Button
+     android:id="@+id/btn_play3"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Play"
+     android:layout_marginStart="100dp"
+     android:layout_marginTop="10dp"
+     android:background="@drawable/button_bg"
+     android:textColor="@color/white"
+     tools:ignore="HardcodedText" />
+
+
+     </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/layout_card_background"
+    android:orientation="horizontal">
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginStart="10dp"
+    android:background="@drawable/flag_rep_bg"
+    android:src="@drawable/macdonald_logo_remove_bg"
+    />
+
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="17dp"
+    android:layout_marginStart="30dp"
+    android:text="Eateries"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <Button
+    android:id="@+id/btn_play4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Play"
+    android:layout_marginStart="100dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/button_bg"
+    android:textColor="@color/white"
+    tools:ignore="HardcodedText" />
+
+
+    </LinearLayout>
+
+    </LinearLayout>
 
 
 
