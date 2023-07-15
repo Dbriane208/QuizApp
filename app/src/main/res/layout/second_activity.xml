@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_background_quiz1"
+    tools:context=".SecondActivity"
     android:orientation="vertical">
 
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_margin="10dp">
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="35dp"
+    android:orientation="horizontal">
 
     <TextView
     android:id="@+id/reg_name"
@@ -31,6 +33,7 @@
     android:layout_height="50dp"
     android:scaleType="centerCrop"
     android:layout_marginVertical="9dp"
+    android:layout_marginEnd="10dp"
     android:src="@drawable/avatar"
     app:shapeAppearanceOverlay="@style/circular" />
 
@@ -47,7 +50,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:text="Let's Play"
+    android:text="Let's Identify Logos"
     android:textSize="30sp"
     android:textStyle="bold"
     android:textColor="#404040"
@@ -123,7 +126,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Play"
-    android:layout_marginStart="100dp"
+    android:layout_marginStart="80dp"
     android:layout_marginTop="10dp"
     android:background="@drawable/button_bg"
     android:textColor="@color/white"
@@ -163,8 +166,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="17dp"
-    android:layout_marginStart="50dp"
-    android:text="Logos"
+    android:layout_marginStart="40dp"
+    android:text="Motors"
     android:textSize="24sp"
     android:textStyle="bold"
     tools:ignore="HardcodedText" />
@@ -176,7 +179,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Play"
-    android:layout_marginStart="100dp"
+    android:layout_marginStart="80dp"
     android:layout_marginTop="10dp"
     android:background="@drawable/button_bg"
     android:textColor="@color/white"
@@ -202,7 +205,7 @@
     android:layout_height="60dp"
     android:layout_marginStart="10dp"
     android:background="@drawable/flag_rep_bg"
-    android:src="@drawable/nike_logo_remove_bg"
+    android:src="@drawable/ms_black_white"
     />
 
     </LinearLayout>
@@ -216,8 +219,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="17dp"
-    android:layout_marginStart="41dp"
-    android:text="Brands"
+    android:layout_marginStart="20dp"
+    android:text="Tech Co."
     android:textSize="24sp"
     android:textStyle="bold"
     tools:ignore="HardcodedText" />
@@ -228,7 +231,7 @@
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:text="Play"
-     android:layout_marginStart="100dp"
+     android:layout_marginStart="80dp"
      android:layout_marginTop="10dp"
      android:background="@drawable/button_bg"
      android:textColor="@color/white"
@@ -266,8 +269,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="17dp"
-    android:layout_marginStart="30dp"
-    android:text="Eateries"
+    android:layout_marginStart="57dp"
+    android:text="CEOs"
     android:textSize="24sp"
     android:textStyle="bold"
     tools:ignore="HardcodedText" />
@@ -279,7 +282,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Play"
-    android:layout_marginStart="100dp"
+    android:layout_marginStart="80dp"
     android:layout_marginTop="10dp"
     android:background="@drawable/button_bg"
     android:textColor="@color/white"

@@ -13,16 +13,36 @@
         android:theme="@style/Theme.QuizApp"
         tools:targetApi="31">
         <activity
+            android:name=".CeosActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.QuizApp"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".ResultActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Base.Theme.QuizApp"
-            android:windowSoftInputMode="adjustResize"
-            />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".QuestionsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TechActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.QuizApp"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".LogoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.QuizApp"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".SecondActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.QuizApp"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
