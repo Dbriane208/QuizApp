@@ -52,6 +52,12 @@ class SecondActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btn_play4.setOnClickListener{
+            val intent = Intent(this, CeosActivity::class.java)
+            intent.putExtra(Constants.USER_NAME, regName)
+            startActivity(intent)
+        }
+
 
     }
 }

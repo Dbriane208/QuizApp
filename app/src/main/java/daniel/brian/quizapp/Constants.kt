@@ -13,7 +13,7 @@ object Constants {
     fun getQuestions(): ArrayList<Questions>{
         val questionsList = ArrayList<Questions>()
 
-        val Qtn1 = Questions (1,
+        val qtn1 = Questions (1,
             "Which country do this flag belong to ?",
             R.drawable.ic_kenya_flag,
             "Uganda",
@@ -22,9 +22,9 @@ object Constants {
             "Ethiopia",
             2
         )
-        questionsList.add(Qtn1)
+        questionsList.add(qtn1)
 
-        val Qtn2 = Questions (2,
+        val qtn2 = Questions (2,
             "Which country do this flag belong to ?",
             R.drawable.ic_uganda_flag,
             "Djibouti",
@@ -33,9 +33,9 @@ object Constants {
             "Ethiopia",
             3
         )
-        questionsList.add(Qtn2)
+        questionsList.add(qtn2)
 
-        val Qtn3 = Questions (3,
+        val qtn3 = Questions (3,
             "Which country do this flag belong to ?",
             R.drawable.ic_tanzania_flag,
             "Uganda",
@@ -44,9 +44,9 @@ object Constants {
             "Ethiopia",
             3
         )
-        questionsList.add(Qtn3)
+        questionsList.add(qtn3)
 
-        val Qtn4 = Questions (4,
+        val qtn4 = Questions (4,
             "Which country do this flag belong to ?",
             R.drawable.ic_rwanda_flag,
             "Rwanda",
@@ -55,9 +55,9 @@ object Constants {
             "Congo",
             1
         )
-        questionsList.add(Qtn4)
+        questionsList.add(qtn4)
 
-        val Qtn5 = Questions (5,
+        val qtn5 = Questions (5,
             "Which country do this flag belong to ?",
             R.drawable.ic_burundi_flag,
             "Egypt",
@@ -66,9 +66,9 @@ object Constants {
             "Burundi",
             4
         )
-        questionsList.add(Qtn5)
+        questionsList.add(qtn5)
 
-        val Qtn6 = Questions (6,
+        val qtn6 = Questions (6,
             "Which country do this flag belong to ?",
             R.drawable.ic_somalia_flag,
             "Uganda",
@@ -77,20 +77,20 @@ object Constants {
             "Ethiopia",
             3
         )
-        questionsList.add(Qtn6)
+        questionsList.add(qtn6)
 
-        val Qtn7 = Questions (7,
+        val qtn7 = Questions (7,
             "Which country do this flag belong to ?",
             R.drawable.ic_ethiopia_flag,
-            "Zimbambwe",
+            "Zimbabwe",
             "Kenya",
             "Mexico",
             "Ethiopia",
             4
         )
-        questionsList.add(Qtn7)
+        questionsList.add(qtn7)
 
-        val Qtn8 = Questions (8,
+        val qtn8 = Questions (8,
             "Which country do this flag belong to ?",
             R.drawable.ic_sudan_flag,
             "Sudan",
@@ -99,9 +99,9 @@ object Constants {
             "Uganda",
             1
         )
-        questionsList.add(Qtn8)
+        questionsList.add(qtn8)
 
-        val Qtn9 = Questions (9,
+        val qtn9 = Questions (9,
             "Which country do this flag belong to ?",
             R.drawable.ic_djibouti_flag,
             "Nigeria",
@@ -110,18 +110,18 @@ object Constants {
             "Benin",
             3
         )
-        questionsList.add(Qtn9)
+        questionsList.add(qtn9)
 
-        val Qtn10 = Questions (10,
+        val qtn10 = Questions (10,
             "Which country do this flag belong to ?",
             R.drawable.ic_eritriea_flag,
             "Burundi",
-            "Eritriea",
+            "Eritrea",
             "Somalia",
             "Rwanda",
             2
         )
-        questionsList.add(Qtn10)
+        questionsList.add(qtn10)
 
         return questionsList
     }
@@ -129,7 +129,7 @@ object Constants {
     fun getLogos() : ArrayList<Questions>  {
         val logoList  = ArrayList<Questions>()
 
-        val Qtn1 = Questions (1,
+        val qtn1 = Questions (1,
             "Which car company does this logo belong to?",
             R.drawable.cardillac_logo,
             "Bentley",
@@ -138,9 +138,9 @@ object Constants {
             "Elemental",
             2
         )
-        logoList.add(Qtn1)
+        logoList.add(qtn1)
 
-        val Qtn2 = Questions (2,
+        val qtn2 = Questions (2,
             "Which car company does this logo belong to?",
             R.drawable.alpine_logo,
             "Mercury",
@@ -149,9 +149,9 @@ object Constants {
             "Alpine",
             4
         )
-        logoList.add(Qtn2)
+        logoList.add(qtn2)
 
-        val Qtn3 = Questions (3,
+        val qtn3 = Questions (3,
             "Which car company does this logo belong to?",
             R.drawable.bently_logo,
             "Bentley",
@@ -160,9 +160,9 @@ object Constants {
             "Audi",
             1
         )
-        logoList.add(Qtn3)
+        logoList.add(qtn3)
 
-        val Qtn4 = Questions (4,
+        val qtn4 = Questions (4,
             "Which car company does this logo belong to?",
             R.drawable.daewoo_logo,
             "Buick",
@@ -171,9 +171,9 @@ object Constants {
             "9ff",
             3
         )
-        logoList.add(Qtn4)
+        logoList.add(qtn4)
 
-        val Qtn5 = Questions (5,
+        val qtn5 = Questions (5,
             "Which car company does this logo belong to?",
             R.drawable.gaz_logo,
             "Skoda",
@@ -182,9 +182,9 @@ object Constants {
             "Renault",
             2
         )
-        logoList.add(Qtn5)
+        logoList.add(qtn5)
 
-        val Qtn6 = Questions (6,
+        val qtn6 = Questions (6,
             "Which car company does this logo belong to?",
             R.drawable.inifiniti_logo,
             "Lexus",
@@ -193,9 +193,9 @@ object Constants {
             "Dodge Viper",
             3
         )
-        logoList.add(Qtn6)
+        logoList.add(qtn6)
 
-        val Qtn7 = Questions (7,
+        val qtn7 = Questions (7,
             "Which car company does this logo belong to?",
             R.drawable.nine_ff_logo,
             "Citroen",
@@ -204,9 +204,9 @@ object Constants {
             "9ff",
             4
         )
-        logoList.add(Qtn7)
+        logoList.add(qtn7)
 
-        val Qtn8 = Questions (8,
+        val qtn8 = Questions (8,
             "Which car company does this logo belong to?",
             R.drawable.pontiac_logo,
             "Pontiac",
@@ -215,9 +215,9 @@ object Constants {
             "Elemental",
             1
         )
-        logoList.add(Qtn8)
+        logoList.add(qtn8)
 
-        val Qtn9 = Questions (9,
+        val qtn9 = Questions (9,
             "Which car company does this logo belong to?",
             R.drawable.renault_logo,
             "Arcfox",
@@ -226,9 +226,9 @@ object Constants {
             "Mercury",
             2
         )
-        logoList.add(Qtn9)
+        logoList.add(qtn9)
 
-        val Qtn10 = Questions (10,
+        val qtn10 = Questions (10,
             "Which car company does this logo belong to?",
             R.drawable.vinfast_logo,
             "Bentley",
@@ -237,7 +237,7 @@ object Constants {
             "Honda",
             3
         )
-        logoList.add(Qtn10)
+        logoList.add(qtn10)
 
         return  logoList
     }
@@ -246,7 +246,7 @@ object Constants {
 
         val techList = ArrayList<Questions>()
 
-        val Qtn1 = Questions (1,
+        val qtn1 = Questions (1,
             "Which tech company do this logo belong to ?",
             R.drawable.microsoft_logo,
             "Airbnb",
@@ -255,9 +255,9 @@ object Constants {
             "Google",
             3
         )
-        techList.add(Qtn1)
+        techList.add(qtn1)
 
-        val Qtn2 = Questions (2,
+        val qtn2 = Questions (2,
             "Which tech company do this logo belong to ?",
             R.drawable.accenture_logo,
             "Accenture",
@@ -266,10 +266,10 @@ object Constants {
             "Taro",
             1
         )
-        techList.add(Qtn2)
+        techList.add(qtn2)
 
 
-        val Qtn3 = Questions (3,
+        val qtn3 = Questions (3,
             "Which tech company do this logo belong to ?",
             R.drawable.airbnb_logo,
             "Pair AI",
@@ -278,9 +278,9 @@ object Constants {
             "Google",
             3
         )
-        techList.add(Qtn3)
+        techList.add(qtn3)
 
-        val Qtn4 = Questions (4,
+        val qtn4 = Questions (4,
             "Which tech company do this logo belong to ?",
             R.drawable.apple_logo,
             "Airbnb",
@@ -289,9 +289,9 @@ object Constants {
             "Paypal",
             2
         )
-        techList.add(Qtn4)
+        techList.add(qtn4)
 
-        val Qtn5 = Questions (5,
+        val qtn5 = Questions (5,
             "Which tech company do this logo belong to ?",
             R.drawable.figma_logo,
             "Canva",
@@ -300,9 +300,9 @@ object Constants {
             "Figma",
             4
         )
-        techList.add(Qtn5)
+        techList.add(qtn5)
 
-        val Qtn6 = Questions (6,
+        val qtn6 = Questions (6,
             "Which tech company do this logo belong to ?",
             R.drawable.google_logo,
             "Airbnb",
@@ -311,9 +311,9 @@ object Constants {
             "Google",
             4
         )
-        techList.add(Qtn6)
+        techList.add(qtn6)
 
-        val Qtn7 = Questions (7,
+        val qtn7 = Questions (7,
             "Which tech company do this logo belong to ?",
             R.drawable.meta_logo,
             "Apple",
@@ -322,9 +322,9 @@ object Constants {
             "Metaverse",
             3
         )
-        techList.add(Qtn7)
+        techList.add(qtn7)
 
-        val Qtn8 = Questions (8,
+        val qtn8 = Questions (8,
             "Which tech company do this logo belong to ?",
             R.drawable.spotify_logo,
             "Spotify",
@@ -333,9 +333,9 @@ object Constants {
             "Threads",
             1
         )
-        techList.add(Qtn8)
+        techList.add(qtn8)
 
-        val Qtn9 = Questions (9,
+        val qtn9 = Questions (9,
             "Which tech company do this logo belong to ?",
             R.drawable.threads_logo,
             "Instagram",
@@ -344,9 +344,9 @@ object Constants {
             "Twitter Clone",
             2
         )
-        techList.add(Qtn9)
+        techList.add(qtn9)
 
-        val Qtn10 = Questions (10,
+        val qtn10 = Questions (10,
             "Which tech company do this logo belong to ?",
             R.drawable.tiktok_logo,
             "Tencent",
@@ -355,7 +355,7 @@ object Constants {
             "Taro",
             3
         )
-        techList.add(Qtn10)
+        techList.add(qtn10)
 
         return  techList
     }
@@ -364,8 +364,8 @@ object Constants {
 
         val ceosList = ArrayList<Questions>()
 
-        val Qtn1 = Questions (1,
-            "Which tech company do this logo belong to ?",
+        val qtn1 = Questions (1,
+            "Who is the CEO of the company to which  this logo belong to ?",
             R.drawable.louis_vuiton,
             "Bernard Arnault",
             "Elon Musk",
@@ -373,7 +373,106 @@ object Constants {
             "Wael Sawan",
             1
         )
-        ceosList.add(Qtn1)
+        ceosList.add(qtn1)
+
+        val qtn2 = Questions (2,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.pepsi_logo,
+            "Bernard Arnault",
+            "Ramon Laguarta",
+            "Linda Yaccarino",
+            "Jeff Bezos",
+            2
+        )
+        ceosList.add(qtn2)
+
+        val qtn3 = Questions (3,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.starbucks_logo,
+            "Peter Ndegwa",
+            "Elon Musk",
+            "Laxman Narasimhan",
+            "Steve Hill",
+            3
+        )
+        ceosList.add(qtn3)
+
+        val qtn4 = Questions (4,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.addidas1_logo,
+            "Ramon Laguarta",
+            "John Donahoe",
+            "Kim Harrington",
+            "Bjorn Gulden",
+            4
+        )
+        ceosList.add(qtn4)
+
+        val qtn5 = Questions (5,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.twiga_logo,
+            "Aliko Dangote",
+            "Chris Kirubi",
+            "Peter Njonjo",
+            "Peter Ndegwa",
+            3
+        )
+        ceosList.add(qtn5)
+
+        val qtn6 = Questions (6,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.safaricom_logo,
+            "Bob Colly-more",
+            "Peter Ndegwa",
+            "Jimmy Wanjigi",
+            "Chris Kirubi",
+            2
+        )
+        ceosList.add(qtn6)
+
+        val qtn7 = Questions (7,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.redbull_logo,
+            "Steve Hill",
+            "Gwynne Shotwell",
+            "Dietrich Mateschitz",
+            "Wael Sawan",
+            3
+        )
+        ceosList.add(qtn7)
+
+        val qtn8 = Questions (8,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.amazon_logo,
+            "Bill Gates",
+            "Peter Thiel",
+            "George Soros",
+            "Jeff Bezos",
+            4
+        )
+        ceosList.add(qtn8)
+
+        val qtn9 = Questions (9,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.nike_logo,
+            "Bjorn Gulden",
+            "John Donahoe",
+            "Kim Harrington",
+            "Linda Yaccarino",
+            2
+        )
+        ceosList.add(qtn9)
+
+        val qtn10 = Questions (1,
+            "Who is the CEO of the company to which  this logo belong to ?",
+            R.drawable.twitter_logo,
+            "Linda Yaccarino",
+            "Elon Musk",
+            "Bill Gates",
+            "Sam Altman",
+            1
+        )
+        ceosList.add(qtn10)
 
         return ceosList
     }
