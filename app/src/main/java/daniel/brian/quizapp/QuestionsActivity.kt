@@ -15,17 +15,11 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import daniel.brian.quizapp.databinding.ActivityQuestionsBinding
 
 class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var progressBar : ProgressBar
-    private lateinit var tvProgress : TextView
-    private lateinit var tvQuestion : TextView
-    private lateinit var ivImage : ImageView
-    private lateinit var optionOne : TextView
-    private lateinit var optionTwo : TextView
-    private lateinit var optionThree : TextView
-    private lateinit var optionFour : TextView
-    private lateinit var submitButton : Button
+
+    private lateinit var  binding: ActivityQuestionsBinding
 
     private var mCurrentPosition : Int = 1
     private var mQuestionList : ArrayList<Questions>? = null
@@ -37,28 +31,20 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.statusBarColor = Color.TRANSPARENT
-        setContentView(R.layout.activity_questions)
+        binding = ActivityQuestionsBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         mUserName = intent.getStringExtra(Constants.USER_NAME)
         mQuestionList = Constants.getQuestions()
 
-        // Finding elements by Id
-        progressBar = findViewById(R.id.progressBar)
-        tvProgress = findViewById(R.id.tv_progress)
-        tvQuestion = findViewById(R.id.tv_question)
-        ivImage = findViewById(R.id.iv_image)
-        optionOne = findViewById(R.id.optionOne)
-        optionTwo = findViewById(R.id.optionTwo)
-        optionThree = findViewById(R.id.optionThree)
-        optionFour = findViewById(R.id.optionFour)
-        submitButton = findViewById(R.id.submitBtn)
 
         // To access the buttons
-        optionOne.setOnClickListener(this)
-        optionTwo.setOnClickListener(this)
-        optionThree.setOnClickListener(this)
-        optionFour.setOnClickListener(this)
-        submitButton.setOnClickListener(this)
+        binding.optionOne.setOnClickListener(this)
+        binding.optionTwo.setOnClickListener(this)
+        binding.optionThree.setOnClickListener(this)
+        binding.optionFour.setOnClickListener(this)
+        binding.submitBtn.setOnClickListener(this)
 
         setQuestion()
 
@@ -70,20 +56,20 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         val question = mQuestionList!![mCurrentPosition  - 1]
 
         if(mCurrentPosition == mQuestionList!!.size){
-            submitButton.text = "FINISH"
+            binding.submitBtn.text = "FINISH"
         }else{
-            submitButton.text = "SUBMIT"
+            binding.submitBtn.text = "SUBMIT"
         }
 
-        progressBar.progress = mCurrentPosition
-        tvProgress.text = "$mCurrentPosition " + "/" + progressBar.max
+        binding.progressBar.progress = mCurrentPosition
+        binding.tvProgress.text = "$mCurrentPosition " + "/" + binding.progressBar.max
 
-        tvQuestion.text = question .Question
-        ivImage.setImageResource(question.image)
-        optionOne.text = question.optionOne
-        optionTwo.text = question.optionTwo
-        optionThree.text = question.optionThree
-        optionFour.text = question.optionFour
+        binding.tvQuestion.text = question .Question
+        binding.ivImage.setImageResource(question.image)
+        binding.optionOne.text = question.optionOne
+        binding.optionTwo.text = question.optionTwo
+        binding.optionThree.text = question.optionThree
+        binding.optionFour.text = question.optionFour
 
         // This will be set the default after every question
         defaultOptionView()
@@ -94,10 +80,10 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         val options = ArrayList<TextView>()
 
-        options.add(0, this.optionOne)
-        options.add(1, this.optionTwo)
-        options.add(2, this.optionThree)
-        options.add(3, this.optionFour)
+        options.add(0, this.binding.optionOne)
+        options.add(1, this.binding.optionTwo)
+        options.add(2, this.binding.optionThree)
+        options.add(3, this.binding.optionFour)
 
         for(option in options){
 
@@ -114,16 +100,16 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
          when(v?.id) {
              R.id.optionOne -> {
-                 selectedOptionView(optionOne, 1)
+                 selectedOptionView(binding.optionOne, 1)
              }
              R.id.optionTwo -> {
-                 selectedOptionView(optionTwo, 2)
+                 selectedOptionView(binding.optionTwo, 2)
              }
              R.id.optionThree -> {
-                 selectedOptionView(optionThree, 3)
+                 selectedOptionView(binding.optionThree, 3)
              }
              R.id.optionFour -> {
-                 selectedOptionView(optionFour, 4)
+                 selectedOptionView(binding.optionFour, 4)
              }
              R.id.submitBtn -> {
 
@@ -152,10 +138,10 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                          answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
 
                      if(mCurrentPosition == mQuestionList!!.size){
-                         submitButton.text = "FINISH"
+                         binding.submitBtn.text = "FINISH"
 
                      }else{
-                         submitButton.text = "GO TO THE NEXT QUESTION"
+                         binding.submitBtn.text = "GO TO THE NEXT QUESTION"
                      }
                          mSelectedOptionPosition = 0
                  }
@@ -167,16 +153,16 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         when(answer){
             1 -> {
-              optionOne.background = ContextCompat.getDrawable(this,drawableView)
+              binding.optionOne.background = ContextCompat.getDrawable(this,drawableView)
             }
             2 -> {
-                optionTwo.background = ContextCompat.getDrawable(this,drawableView)
+                binding.optionTwo.background = ContextCompat.getDrawable(this,drawableView)
             }
             3 -> {
-                optionThree.background = ContextCompat.getDrawable(this,drawableView)
+                binding.optionThree.background = ContextCompat.getDrawable(this,drawableView)
             }
             4 -> {
-                optionFour.background = ContextCompat.getDrawable(this,drawableView)
+                binding.optionFour.background = ContextCompat.getDrawable(this,drawableView)
             }
         }
     }

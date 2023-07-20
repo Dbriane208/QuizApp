@@ -9,32 +9,29 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
+import daniel.brian.quizapp.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
 
-    private lateinit var userName : TextView
-    private lateinit var total_Score : TextView
-    private lateinit var btnFinish  : Button
+    private  lateinit var binding: ActivityResultBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.statusBarColor = Color.TRANSPARENT
-        setContentView(R.layout.activity_result)
-
-        userName = findViewById(R.id.userName)
-        total_Score = findViewById(R.id.total_Score)
-        btnFinish = findViewById(R.id.btnFinish)
+        binding = ActivityResultBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         val username = intent.getStringExtra(Constants.USER_NAME)
-        userName.text = username
+        binding.userName.text = username
 
         val totalQuestions = intent.getIntExtra(Constants.TOTAL_QUESTIONS, 0)
         val correctAnswers = intent.getIntExtra(Constants.CORRECT_ANSWERS,0)
 
-        "Your Score is $correctAnswers out of $totalQuestions".also { total_Score.text = it }
+        "Your Score is $correctAnswers out of $totalQuestions".also { binding.totalScore.text = it }
 
-        btnFinish.setOnClickListener{
+        binding.btnFinish.setOnClickListener{
             startActivity(Intent(this,  MainActivity::class.java))
             finish()
         }
